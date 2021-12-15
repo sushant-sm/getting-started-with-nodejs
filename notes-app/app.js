@@ -1,3 +1,12 @@
-const fs = require('fs');
+const chalk = require('chalk')
+const yargs = require('yargs')
+const note = require('./notes.js')
 
-fs.appendFileSync('notes.txt', 'Now Go Fuck off!');
+yargs.command({
+    command: 'list',
+    describe: 'List Command Description',
+    handler: function() {
+        console.log('List Command Handler')
+    }
+})
+console.log(yargs.argv)
